@@ -13,8 +13,8 @@
 		data() {
 			return {
 				id:"rental_price",
-				width:"225px",
-				height:"200px",
+				width:"282px",
+				height:"300px",
 				j:0,
 				option:{
 				     title: {
@@ -167,7 +167,7 @@
 </script>
 <style scoped>
 	.rental_price{
-		height:208px;
+		height:310px;
 		/* border-right:2px solid #fff;
 		border-bottom:2px solid #fff; */
 		/* padding: 2% 0; */

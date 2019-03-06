@@ -14,8 +14,8 @@
  		data() {
  			return {
  				id:"vacancy",
- 				width:"225px",
- 				height:"150px",
+ 				width:"295px",
+ 				height:"177px",
  				option:{
  					title : {
  						text: '空置面积占比分析',
@@ -107,10 +107,12 @@
  				this.$api.getAreaRoom(id).then(res=>{
  					var data=[];
  					res.data.forEach((e, i, a)=> {
- 						data.push({
+ 						if(e.num!=0){
+ 							data.push({
  							value:e.num,
  							name:e.type
  						})
+ 						}
  					})
  					this.option.series[0].data=data;
  					
@@ -122,7 +124,7 @@
  </script>
  <style scoped>
  .containers{
-	 height:260px;
+	 /* height:260px; */
  	/* margin-left: 2%; */
  
  }

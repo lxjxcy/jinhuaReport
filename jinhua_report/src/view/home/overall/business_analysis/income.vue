@@ -15,8 +15,8 @@ import util from "../../../../common/js/tool.js"
 		data() {
 			return {
 			id:"income",
-			width:"225px",
-			height:"150px",
+			width:"600px",
+			height:"200px",
 			j:0,
 			xAxis:['01月','02月','03月','04月','05月','06月','07月','08月','09月','10月','11月','12月',],
 			option:{
@@ -97,6 +97,7 @@ import util from "../../../../common/js/tool.js"
 				window.clearInterval(this.init)
 			},
 			 getlist(id){
+				 this.clear()
 				 this.$api.getBuilding(id).then(res=>{
 					 this.savedata(res.data)
 					 var arr=[]
@@ -195,7 +196,7 @@ import util from "../../../../common/js/tool.js"
 </script>
 <style scoped>
 .income{
-	height:200px;
+	height:210px;
 	/* position: relative; */
 	
 	/* border-left: 2px solid #fff; */

@@ -2,7 +2,7 @@
 	<div class="rental_year">
 		<div class="all_price">
 				<h2>年度租金收入</h2>
-				<p class="p1">￥{{total}}</p>
+				<p class="p1">￥{{total}}万元</p>
 				<!-- <ul>
 					<li v-for="item in content">
 						<p class="p2">{{item.communityName}}</p>
@@ -70,7 +70,7 @@
 					this.total=res.data.total;
 					var content=res.data.content;
 					content.forEach((e,i,a)=>{
-						a[i]['nums']=e.num+"元"
+						a[i]['nums']=e.num+"万元"
 						// a['areas'][i]=				
 					})
 					this.content=content
@@ -87,36 +87,40 @@
 <style scoped>
 	.rental_year{
 		/* border-right: 2px solid #fff; */
-		width:480px;
+		width:700px;
 		height:100%;
 		
 	}
 	.seamless-warp2 {
 	        overflow: hidden;
-	        height: 60px;
-	        width: 480px;
+	        height: 100px;
+	        width: 680px;
 	      
 	  }
 		.seamless-warp2 ul{
-			width: 480px;
-			margin-top: 25px;
+			width: 680px;
+			margin-top: 40px;
 	
 			
 		}
 	 .seamless-warp2 .item li{
 		 float: left;
-		 margin-right: 50px;
+		 margin-right: 40px;
+		 height:150px;
 	 }
 	
-	
+	h2{
+		line-height: 50px;
+		font-size: 26px;
+	}
 	.all_price{
 		/* padding:4px; */
 		position: relative;
 		color:#fff;
 	}
 	.p1{
-		line-height: 50px;
-		font-size: 30px;
+		line-height: 70px;
+		font-size: 40px;
 		color: #fff;
 		font-weight: 400;
 		text-align: center;
@@ -128,7 +132,8 @@
 	} */
 	li p{
 		text-align: center;
-		font-size: 14px;
+		font-size: 20px;
+		line-height: 30px;
 	}
 	li .p2{
 		color: aqua;

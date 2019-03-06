@@ -8,7 +8,7 @@
 				<tr>
 					<th><span>企业名称</span></th>
 					<th><span>住进项目</span></th>
-					<th><span>面积</span></th>
+					<th><span>面积(平方米)</span></th>
 				</tr>
 			</table>
 			<vue-seamless-scroll :data="list" class="seamless-warp">
@@ -76,8 +76,8 @@
 
 <style scoped>
 	.company{
-		width:448px;
-		height:210px;
+		width:596px;
+		height:400px;
 		
 	}
 	.hradertitle{
@@ -87,7 +87,7 @@
 		color:#fff;
 	}
 	 .seamless-warp {
-        height: 140px;
+        height: 310px;
         overflow: hidden;
 		line-height: 20px;
     }
@@ -95,7 +95,7 @@
 		width:100%;
 	}
 	table tr th{
-		width: 20%;
+		width: 200px;
 		text-align: center;
 		line-height: 30px;
 		color:#00FFFF;
@@ -112,11 +112,11 @@
 		
 	}
 	table tr td{
-		width: 150px;
+		width: 200px;
 		text-align: center;
-		overflow: hidden;
+		/* overflow: hidden;
 		text-overflow: ellipsis;
-		white-space: nowrap
+		white-space: nowrap */
 	}
 
 

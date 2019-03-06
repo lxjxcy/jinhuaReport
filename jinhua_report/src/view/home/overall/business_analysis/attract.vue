@@ -1,6 +1,6 @@
 <template>
 		<div class="attract">
-			<Charts :id="id"  :option="option" :height="height" :width="width"/>
+			<Charts :id="id" class="echartall" :option="option" :height="height" :width="width"/>
 		</div>		
 </template>
 <script>
@@ -9,8 +9,8 @@
 		data() {
 			return {
 				id:"attract",
-				width:"216px",
-				height:"150px",
+				width:"295px",
+				height:"200px",
 				xAxis:['01月','02月','03月','04月','05月','06月','07月','08月','09月','10月','11月','12月',],
 				clustering:[120, 132, 101, 134, 90, 230, 210,120, 132, 101, 134, 90, 230, 210],
 				technology:[220, 345, 191, 234, 111, 42, 45,220, 182, 567, 655, 732, 330, 233],
@@ -63,7 +63,7 @@
 					},
 					yAxis: {
 						type: 'value',
-						name: '(单位：万平方米)',
+						// name: '(单位：万平方米)',
 						type: 'value',
 						splitLine: {
 							show: false
@@ -86,7 +86,10 @@
 		methods: {
 		 getlist(id){
 			 this.$api.getIntention(id).then(res=>{
-					this.savedata(res.data)
+				 if(res.hasOwnProperty("data")){
+					 this.savedata(res.data)
+				 }
+					
 			 })
 			},
 			savedata(data){

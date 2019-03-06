@@ -9,7 +9,7 @@ var vueInstance = new Vue()
 
 var instance = axios.create({
 	timeout: 600000,
-	// baseURL: "http://122.224.207.90:8885",
+	baseURL: "http://122.224.207.90:8885",
 	headers: {
 		'Content-Type': 'application/json; charset=UTF-8',
 		'X-Requested-With': 'XMLHttpRequest'

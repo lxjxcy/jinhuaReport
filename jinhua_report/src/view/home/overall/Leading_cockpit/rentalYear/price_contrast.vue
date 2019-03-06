@@ -12,7 +12,7 @@
 			return {
 				id:"price_contrast",
 				width:"100%",
-				height:"175px",
+				height:"279px",
 				option:{
 					title : {
 						text: '租金收入比对',
@@ -38,7 +38,7 @@
 					},
 					legend: {
 						orient: 'vertical',
-						right: '0%',
+						right: '10%',
 						icon : 'circle',
 						top:'27%',
 						textStyle:{
@@ -54,7 +54,7 @@
 									target = data[i].value;
 									}
 								}
-								return name + '   |   ' + (parseInt(target)/parseInt(total)*100).toFixed(2) + '%'+ '   |   ￥'+target;
+								return name + '   |   ' + (parseInt(target)/parseInt(total)*100).toFixed(2) + '%'+ '   |   ￥'+target+"万元";
 							},
 							
 							

@@ -8,18 +8,15 @@
 <script>
 	export default {
 		name:"workpiece",
-		 props: {
-			percent: {
-				type: String,
-				required:true,
-			 }
-    },
+
 		
 		data(){
 			return{
+				percent:"",
+
 				id:"workpiece",
-				width:"150px",
-				height:"150px",
+				width:"200px",
+				height:"200px",
 				option:{
 					tooltip: {				// 本系列特定的 tooltip 设定。	
 						show: true,

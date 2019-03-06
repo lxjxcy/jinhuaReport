@@ -1,18 +1,21 @@
 <template>
 	<!-- :style ="note" -->
   <div id="home" class="img1 note" >
-	<!-- <header>
-		  <headercomp></headercomp>		 
-	  </header> -->
+	<header class="echartall">
+		  <headerComp></headerComp>		 
+	  </header>
 	  <main>
 		 <router-view/>
 	  </main>  
   </div>
 </template>
 <script>
-	
+	import headerComp from "../headercomp.vue"
 export default {
   name: 'home',
+	components:{
+		headerComp
+	},
 	data() {
 		return {
 			note: {
@@ -34,14 +37,18 @@ export default {
 		/* height:100%; */
 /* 		display: flex;
 		flex-direction:column;	 */
-		height:640px;
-		width:1408px;
+		height:1080px;
+		width:1920px;
 		overflow-x:hidden;
 		background: #000036;
 		overflow-y:hidden
 	}
 	header{
-		height:50px;
+		position: fixed;
+		top:0;
+		right:0;
+		width:200px;
+		height:80px;
 	}
 	main{
 		flex: 1;

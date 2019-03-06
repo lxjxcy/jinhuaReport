@@ -11,7 +11,7 @@
 			return {
 			id:"customers",
 			width:"100%",
-			height:"200px",	
+			height:"340px",	
 			option:{
 					 title: {
 						text: '进驻客户数量',
@@ -133,8 +133,8 @@
 
 <style scoped>
 	.customers{
-		width:460px;
-		height:208px;
+		width:610px;
+		height:350px;
 		/* padding: 2% 0; */
 	}
 </style>

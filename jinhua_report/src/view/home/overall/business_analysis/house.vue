@@ -1,7 +1,7 @@
 <template>
 	<div>
 		<div class="house">
-			<Charts :id="id"  :option="option" :height="height" :width="width"/>
+			<Charts :id="id" class="echartall" :option="option" :height="height" :width="width"/>
 		</div>
 	</div>
 
@@ -15,8 +15,8 @@
 			return {
 				id:"house",
 			
-				width:"230px",
-				height:"150px",
+				width:"295px",
+				height:"200px",
 			
 				option:{
 					title : {
@@ -179,7 +179,7 @@
 </script>
 <style scoped>
 .house{
-	height:150px;
+	height:210px;
 	
 	/* margin-left: 2%; */
 }

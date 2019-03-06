@@ -12,13 +12,13 @@
 		data(){
 			return{
 				id:"rental_area",
-				width:"210px",
-				height:"200px",
+				width:"300px",
+				height:"300px",
 				xAxis:['01月','02月','03月','04月','05月','06月','07月','08月','09月','10月','11月','12月',],
 				data:[340, 532, 401, 222, 390, 120,45,340, 532, 401, 222, 390, 120,0],
 				option:{
 							title : {
-								text: '在租面积（万平方米）',
+								text: '在租面积',
 								x:'left',
 								textStyle: {
 								fontSize: 16,
@@ -177,7 +177,7 @@
 
 <style scoped>
 	.rental_area{
-		height:200px;
+		height:310px;
 	}
 
 

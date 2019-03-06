@@ -14,17 +14,17 @@ import echarts from "echarts";
 		data() {
 			return {
 				id:"occupancys",
-				width:"460px",
+				width:"610px",
 				init:"",
 				hackReset:true,
-				height:"180px",
+				height:"230px",
 				
 				option:{
 						title : {
 							text: '出租概率',
 							x:'left',
 							textStyle: {
-								fontSize: 16,
+								fontSize: 20,
 								backgroundColor:"#f0f",
 								fontStyle: 'normal',
 								fontWeight: 'normal',
@@ -35,12 +35,22 @@ import echarts from "echarts";
 					tooltip : {
 						trigger: 'item',
 					},
+// 					legend: {
+// 						data:['云溪楼'],
+// 						left: '0%',
+// 						top: '15%',
+// 						icon: "circle",
+// 						textStyle:{
+// 						color:['#fff'],
+// 						},
+// 					},
+					
 					grid: {
 						left: '0',
-						top:"0"	,
+						top:"2%"	,
 						left: '3%',
 						right: '4%',
-						bottom: '1%',
+						bottom: '0%',
 						// top:"40%",
 					},
 					textStyle:{
@@ -62,27 +72,40 @@ import echarts from "echarts";
 			},
 			getlist(id){
 				this.clear()
+				
 				this.$api.getReaBuilding(id).then(res=>{
+					this.hackReset = false
+						this.$nextTick(() => {
+						this.hackReset = true
+					})
+					
 					// if(res.data.length/6)
 					var arr=[]
 					var len=res.data.length/6;
+				
 					
 					if(len<=1){
 						this.savedata(res.data)
 					
 						return;
 					}
+				
 					for(var i=0;i<len;i++){
 						var list=[]
 						 list.push(res.data.slice(i*6,(i+1)*6))
 						 arr.push(list)
 					}
+					console.log(arr)
+					
+				
 					
 					this.savedata(arr[0][0])
+					
 						var index=0;
-						
+					
 					this.init=window.setInterval(()=>{
 						index++;
+						
 						if(index==arr.length){
 							index=0
 						}
@@ -91,7 +114,8 @@ import echarts from "echarts";
 							this.$nextTick(() => {
 							this.hackReset = true
 						})
-						this.savedata(arr[index][0])		
+						this.savedata(arr[index][0])	
+							
 													
 					},3000)
 					
@@ -109,8 +133,8 @@ import echarts from "echarts";
 					needdata.push({
             name: '',
             type: 'pie',
-						radius: ['25%', '32%'],
-            center: [center + "%", "40%"],//饼图的位置 
+						radius: ['30%', '40%'],
+            center: [center + "%", "50%"],//饼图的位置 
             avoidLabelOverlap: false,
             hoverAnimation:false,
             label: { //  饼图图形上的文本标签
@@ -161,8 +185,8 @@ import echarts from "echarts";
 							{
 								name: '',
 								type: 'pie',
-								radius: ['25%'],
-								center: [center-0.5 + "%", "38%"],//饼图的位置 
+								radius: ['33%'],
+								center: [center-0.5 + "%", "49%"],//饼图的位置 
 								avoidLabelOverlap: false,
 								hoverAnimation:false,
 								label: { //  饼图图形上的文本标签

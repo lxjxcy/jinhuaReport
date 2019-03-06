@@ -10,8 +10,8 @@
 		data() {
 			return {
 			id:"gardencustomers",
-			width:"100%",
-			height:"150px",	
+			width:"600px",
+			height:"200px",	
 			option:{
 					 title: {
 						text: '进驻客户数量',
@@ -76,18 +76,22 @@
 			}
 		},
 		mounted(){
-			this.getlist()
+			// this.getlist()
 			
 		},
 		methods: {
-			getlist(){
-				this.$api.getCompanyNumber().then(res=>{
+			getlist(id){
+				this.$api.getParkCusomer(id).then(res=>{
+					
+					console.log(res)
 					var list=[]
 					var color=['#be5769','#666666','#00fff9'];
 					var type=["line","line","bar"]
 					this.option.legend.color=color;
+					console.log(res.data[0].typeName)
 						res.data.forEach((e, i, a)=> {
 							this.option.legend.data[i]=e.clientType;
+							
 							var numdata=[]
 							var month=[]
 							e.content.forEach((me,mi,ma)=>{
@@ -133,8 +137,8 @@
 
 <style scoped>
 	.gardencustomers{
-		width:235px;
-		height:150px;
+		/* width:600px; */
+		height:210px;
 		/* padding: 2% 0; */
 	}
 </style>

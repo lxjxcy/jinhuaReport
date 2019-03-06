@@ -1,43 +1,34 @@
 <template>
 	<div class="business_analysis">
-		<!-- <div class="title"> -->
-			 <!-- <vue-seamless-scroll :data="list" :class-option="optionLeft" class="seamless-warp2"> -->
+
         <ul class="title">
             <li v-for="(item,index) in list" >
 							<span v-if="ifselect==index" class="yesSelect">{{item.community_name}}</span>
 						</li>
         </ul>
-			<!-- </vue-seamless-scroll> -->
-        <!-- <vueSeamless :data='list' :class-option="optionCustomer">
-          <ul class="userImageAllWrapper">
-						<li v-for="(item,index) in list"><span :class="ifselect==index?'yesSelect':'noSelect'">{{item.community_name}}</span></li>
+				<ul>
+					<li><occupancy  ref="occupancyChild"></occupancy></li>
+				</ul>
 
-          </ul>
-         </vueSeamless> -->
-    <!-- </div> -->
-
-		<!-- <div class="title">
-			<ul>
-				
-			</ul>
-		</div> -->
-		<ul>
+		<ul style="position: relative;top:-60px;">
 		
 				<!-- <ul style="overflow: hidden;padding-top:1%;height:170px;margin-left: 2%;"> -->
-					<li><occupancy  ref="occupancyChild"></occupancy></li>
-					<li style="display: flex;justify-content: flex-start;position: relative;
-	top:-55px;">
-						<income ref="incomeChild"></income>	
-						<gardencustomers></gardencustomers>
-					</li>
-					<li class="echartall" style="display: flex;justify-content: flex-start;position: relative;
-	top:-98px;">
+					
+					<li><income ref="incomeChild"></income></li>
+					<li style="display: flex;justify-content: flex-start;">
 						<house ref="houseChild"></house>
 						<attract ref="attractChild"></attract>
 						
 					</li>
-								<li style="display: flex;justify-content: flex-start;position: relative;
-				top:-98px;" >
+					<li><gardencustomers ref="customersChild"></gardencustomers></li>
+
+<!-- 					<li style="display: flex;justify-content: flex-start;position: relative;
+	top:-55px;">
+						<income ref="incomeChild"></income>	
+						<gardencustomers></gardencustomers>
+					</li> -->
+					
+								<li style="display: flex;justify-content: flex-start;" >
 									<daynum ref="daynumChild"></daynum>
 									<vacancy ref="vacancyChild"></vacancy>
 									
@@ -91,7 +82,6 @@
 		 },
 		mounted(){
 			this.getlists()
-		
 			var classindex=0
 			setInterval(()=>{
 				classindex++;
@@ -100,7 +90,7 @@
 					classindex=0
 				}
 			  this.getclass(classindex)
-			},30000)
+			},15000)
 		},
 		methods:{
 			//获取所有园区
@@ -123,6 +113,8 @@
 				this.$refs.attractChild.getlist(id)
 				this.$refs.daynumChild.getlist(id)
 				this.$refs.vacancyChild.getlist(id)
+				this.$refs.customersChild.getlist(id)
+				
 			}
 			
 		}
@@ -163,7 +155,9 @@
 	}
 
 .title{
-	overflow: hidden
+	overflow: hidden;
+	height:80px;
+	line-height: 80px;
 
 }
 	.title ul{
@@ -173,12 +167,12 @@
 		
 	}
 	.title li span{
-		line-height: 30px;
+		line-height: 40px;
 		display: inline-block;
 		/* border:2px solid #fff; */
 		padding:0 2px;
 		margin: 0 2px;
-		font-size: 16px;
+		font-size: 20px;
 	}
 	.yesSelect{
 		/* background: #00FFFF; */

@@ -77,7 +77,7 @@ ul li{
 }
 	
 .echartall{
-		margin: 2px;
+		margin: 3px;
 		padding:1px 2px;
 		border: 2px solid hsla(0,0%,90%,.2); 
     background: linear-gradient(to left, #fff, #fff) left top no-repeat, 

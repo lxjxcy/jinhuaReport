@@ -34,7 +34,7 @@
 		flex-flow: row
 	}
 	.Leading_cockpit{
-		width:460px;
+		width:610px;
 		
 	}
 
