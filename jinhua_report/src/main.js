@@ -6,6 +6,7 @@ import router from './router'
 import store from './store/index.js'
 
 import axios from "./axiosconfig/index.js"
+import 'yuki-createjs'
 
 import echarts from 'echarts'
 Vue.prototype.$echarts = echarts ;
